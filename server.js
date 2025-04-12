@@ -1,13 +1,6 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
-const isProduction = process.env.NODE_ENV === 'production'
-
-// Cached production assets
-const templateHtml = isProduction
-  ? await fs.readFile('./dist/client/index.html', 'utf-8')
-  : ''
-  
 const PORT = 8000
 
 const express = require('express')
@@ -16,11 +9,11 @@ const axios = require('axios')
 require('dotenv').config()
 
 const app = express() 
-/*const corsOptions = {
-    origin:["http://localhost:5173"],
-}*/
+const corsOptions = {
+    origin:["https://naturaleventtracker.onrender.com"],
+}
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 // api call from NASA and USGS
 app.get('/apinasa', (req, res) => {
