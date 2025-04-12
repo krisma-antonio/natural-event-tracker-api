@@ -1,6 +1,13 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
+const isProduction = process.env.NODE_ENV === 'production'
+
+// Cached production assets
+const templateHtml = isProduction
+  ? await fs.readFile('./dist/client/index.html', 'utf-8')
+  : ''
+  
 const PORT = 8000
 
 const express = require('express')
