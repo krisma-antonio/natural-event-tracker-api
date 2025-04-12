@@ -1,9 +1,10 @@
 {
-  "name": "natural-event-tracker",
+  "name": "natural-event-tracker-api",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
     "dev": "node server.js",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.js",
