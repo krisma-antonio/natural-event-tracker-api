@@ -182,13 +182,6 @@ app.get('/tempExtremes', (req, res) => {
 })
 
 
-// api call from Mapbox
-app.get('/map', (req, res) => {
-
-   // mapboxgl.accessToken = process.env.VITE_MAPBOX_API_KEY;
-   //https://api.mapbox.com/styles/v1/{owner}/{style_id}?access_token=YOUR_MAPBOX_ACCESS_TOKEN
-    
-})
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 
